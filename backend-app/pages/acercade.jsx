@@ -1,10 +1,10 @@
 import Header from '@/components/Header';
 
-export default function Home() {
+export default function AcercaDe() {
   return (
     <>
       <Header />
-      <h1>Programando las interfaces</h1>
+      <h1>Acerca de</h1>
     </>
   );
 }

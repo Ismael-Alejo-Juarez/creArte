@@ -1,0 +1,59 @@
+.header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* Afecta a todos los componentes Link */
+.links {
+    text-decoration: none;
+    color: #000;
+    font-size: 24px;
+    margin: 0 15px;
+    padding-bottom: 3px;
+}
+
+/* Edición del título */
+.title {
+    font-size: 20px;
+}
+
+/* Generales */
+.sections,
+.title,
+.options,
+.social,
+.links {
+    display: flex;
+    align-items: center;
+}
+
+/* Específicos */
+/* Edición de div = sections */
+.sections {
+    justify-content: left;
+}
+
+/* Edición de div = title */
+.title {
+    justify-content: center;
+}
+
+/* Edición de div = options */
+.options {
+    justify-content: right;
+}
+
+#scTienda {
+    margin-left: 0;
+}
+
+.cart {
+    margin-right: 0;
+}
+
+/* Todo lo dinámico va después de este comentario */
+/* El actual siempre tendrá decoración
+Actualmente, es Tienda */
+.active {
+    border-bottom: 1px solid #000;
+}
