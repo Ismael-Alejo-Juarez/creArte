@@ -1,20 +1,23 @@
 import styles from "@/styles/Product.module.css"
-import { raleway, ralewayPrd, ralewayPre } from "@/fonts/Raleway";
+import Link from "next/link";
+import { raleway, ralewayPrd } from "@/fonts/Raleway";
+import { roboto } from "@/fonts/Roboto";
 
-export default function Product(){
+export default function Product({id, name, price, image}){
+    console.log("Image: ", image);
     return (
-        <div className={styles.productContainer}>
+        <Link href={`/product/${id}`} className={styles.productContainer}>
             <div className={styles.imgProduct}>
-                <img src="https://zzazkqeezmxrywscnnat.supabase.co/storage/v1/object/public/products-images/leon.jpg" alt="leon-peluche" />
+                <img src={image.url} alt={image.url} />
             </div>
             <div className={`${styles.infoProduct} ${raleway.className}`}>
                 <p className={`${styles.nameProduct} ${ralewayPrd.className}`}>
-                    Leon de peluche hecho a mano con hilo muy bonito con estambre y cosas así
+                    {name}
                 </p>
-                <p className={`${styles.priceProduct} ${ralewayPre.className}`}>
-                    $150.00MXN
+                <p className={`${styles.priceProduct} ${roboto.className}`}>
+                    ${price.toFixed(2)}MXN
                 </p>
             </div>
-        </div>
+        </Link>
     );
 }

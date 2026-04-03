@@ -17,9 +17,3 @@ export const ralewayPrd = Raleway({
     weight: "600",
     subsets: ["latin"]
 });
-
-// Raleway para precios de productos
-export const ralewayPre = Raleway({
-    weight: "500",
-    subsets: ["latin"]
-});
