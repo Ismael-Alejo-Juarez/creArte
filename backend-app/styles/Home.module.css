@@ -1,0 +1,8 @@
+/* En este div = products están listados los productos obtenidos*/
+.listProducts{
+    width: 1fr;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 50px;
+}

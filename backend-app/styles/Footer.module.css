@@ -1,0 +1,46 @@
+.footer{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr auto;
+}
+
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 50px;
+    font-size: 24px;
+}
+
+.options{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.options p{
+    margin: 0 40px;
+}
+
+.social{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding: 50px;
+    font-size: 24px;
+}
+
+.facebook{
+    margin: 0 30px;
+}
+
+.copyright{
+    display: flex;
+    justify-content: left;
+}
+
+.copyright p{
+    font-size: 14px;
+    color: #AAA;
+}
