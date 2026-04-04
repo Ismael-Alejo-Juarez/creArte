@@ -1,6 +1,7 @@
 .header {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    padding: 50px 50px 0 50px;
 }
 
 /* Afecta a todos los componentes Link */
@@ -43,7 +44,7 @@
     justify-content: right;
 }
 
-#scTienda {
+.scTienda {
     margin-left: 0;
 }
 
@@ -56,4 +57,9 @@
 Actualmente, es Tienda */
 .active {
     border-bottom: 1px solid #000;
+}
+
+.links:hover{
+    cursor: pointer;
+    color: #333;
 }

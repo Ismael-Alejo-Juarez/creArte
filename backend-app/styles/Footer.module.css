@@ -1,8 +1,8 @@
 .footer{
-    margin-top: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr auto;
+    padding: 50px 50px 20px 50px;
 }
 
 .title{
@@ -19,7 +19,9 @@
     justify-content: center;
 }
 
-.options p{
+.space{
+    color: #000;
+    text-decoration: none;
     margin: 0 40px;
 }
 
@@ -33,6 +35,11 @@
 
 .facebook{
     margin: 0 30px;
+}
+
+.facebook, .instagram{
+    text-decoration: none;
+    color: #000;
 }
 
 .copyright{

@@ -4,7 +4,6 @@ import { raleway, ralewayPrd } from "@/fonts/Raleway";
 import { roboto } from "@/fonts/Roboto";
 
 export default function Product({id, name, price, image}){
-    console.log("Image: ", image);
     return (
         <Link href={`/product/${id}`} className={styles.productContainer}>
             <div className={styles.imgProduct}>

@@ -18,32 +18,25 @@ export default function Header() {
                     className={`
                         ${styles.links}
                         ${router.pathname === '/' ? styles.active : ''}
+                        ${styles.scTienda}
                         `}
                 >Tienda</Link>
                 <Link
-                    key="/catalogo"
-                    href="/catalogo"
-                    className={`
-                        ${styles.links}
-                        ${router.pathname === '/catalogo' ? styles.active : ''}
-                        `}
-                >Catálogo</Link>
-                <Link
-                    key="/acercade"
-                    href="/acercade"
-                    className={`
-                        ${styles.links}
-                        ${router.pathname === '/acercade' ? styles.active : ''}
-                        `}
-                >Acerca de</Link>
-                <Link
-                    key="/contacto"
-                    href="/contacto"
+                    key="/contact"
+                    href="/contact"
                     className={`
                         ${styles.links}
                         ${router.pathname === '/contacto' ? styles.active : ''}
                         `}
                 >Contacto</Link>
+                <Link
+                    key="/about"
+                    href="/about"
+                    className={`
+                        ${styles.links}
+                        ${router.pathname === '/acercade' ? styles.active : ''}
+                        `}
+                >Acerca de creArte</Link>
             </div>
             <div className={`${styles.title} ${ralewayS.className}`}>
                 <Link href="/" className={styles.links}>
@@ -52,8 +45,11 @@ export default function Header() {
             </div>
             <div className={`${styles.options} ${raleway.className}`}>
                 <Link
-                    href="/"
-                    className={styles.links}
+                    href={"/sign-in"}
+                    className={`
+                        ${styles.links} 
+                        ${router.pathname === '/sign-in' || router.pathname === '/sign-up' ?
+                            styles.active : ''}`}
                 >Iniciar sesión</Link>
                 <div className={styles.social}>
                     <Link
@@ -68,7 +64,7 @@ export default function Header() {
                     </Link>
                 </div>
                 <Link
-                    href="/carrito"
+                    href={"/cart"}
                     className={`${styles.links} ${styles.cart}`}>
                     <LuShoppingCart />
                 </Link>

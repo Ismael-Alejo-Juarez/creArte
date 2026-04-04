@@ -1,0 +1,28 @@
+.mainContainer{
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+
+    padding: 50px 250px 0 250px;
+}
+
+.infoContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imgProfile{
+    border: 1px solid black;
+}
+
+.imgProfile, .imgProfile img{
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+}
+
+.summary{
+    text-align: justify;
+}
