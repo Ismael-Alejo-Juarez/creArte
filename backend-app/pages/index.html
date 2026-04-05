@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>creArte - Carrito de compra</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#fcf9fc] min-h-screen flex flex-col text-gray-900">
+
+    <header class="bg-white flex justify-between items-center px-10 py-6">
+        <nav class="flex gap-6 text-sm text-gray-600">
+            <a href="#" class="hover:text-black transition-colors">Tienda</a>
+            <a href="#" class="hover:text-black transition-colors">Contacto</a>
+            <a href="#" class="hover:text-black transition-colors">Acerca de creArte</a>
+        </nav>
+        
+        <div class="text-3xl font-bold tracking-tight text-black absolute left-1/2 transform -translate-x-1/2">
+            creArte
+        </div>
+        
+        <div class="flex items-center gap-6 text-sm text-gray-600">
+            <a href="#" class="hover:text-black transition-colors">Iniciar sesión</a>
+            <div class="flex items-center gap-4 text-lg text-black">
+                <a href="#" class="hover:text-gray-600"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="hover:text-gray-600"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-gray-600"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow px-10 py-16 max-w-6xl mx-auto w-full">
+        <h1 class="text-3xl font-semibold mb-10 text-black">Carrito de compra</h1>
+
+        <div class="flex flex-col lg:flex-row gap-16">
+            
+            <div class="flex-grow flex flex-col gap-6">
+                <div class="flex items-center justify-between border-b border-gray-200 pb-6">
+                    <div class="flex items-center gap-6">
+                        <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?q=80&w=200&auto=format&fit=crop" 
+                             alt="Jarrón de Cerámica" 
+                             class="w-28 h-28 object-cover rounded bg-white shadow-sm border border-gray-100">
+                        <div>
+                            <h2 class="text-lg font-medium text-black">Jarrón de Cerámica Artesanal</h2>
+                            <p class="text-sm text-gray-500 mt-1">Color: Blanco Mate</p>
+                            <button class="text-xs text-gray-400 mt-4 underline hover:text-black transition-colors">
+                                Eliminar
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center gap-10">
+                        <div class="flex items-center border border-gray-300 rounded text-sm">
+                            <button class="px-3 py-1.5 hover:bg-gray-100 text-gray-600 transition-colors">-</button>
+                            <span class="px-3 py-1.5 border-l border-r border-gray-300 w-10 text-center">1</span>
+                            <button class="px-3 py-1.5 hover:bg-gray-100 text-gray-600 transition-colors">+</button>
+                        </div>
+                        <span class="text-lg font-medium w-24 text-right">$550.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full lg:w-[380px]">
+                <div class="bg-white p-8 rounded shadow-sm border border-gray-100">
+                    <h2 class="text-xl font-medium mb-6">Resumen del pedido</h2>
+                    
+                    <div class="flex justify-between mb-4 text-gray-600 text-sm">
+                        <span>Subtotal</span>
+                        <span>$550.00</span>
+                    </div>
+                    
+                    <div class="flex justify-between mb-6 text-gray-600 text-sm">
+                        <span>Envío</span>
+                        <span>Calculado al pagar</span>
+                    </div>
+                    
+                    <hr class="border-gray-200 mb-6">
+                    
+                    <div class="flex justify-between mb-8 text-lg font-semibold text-black">
+                        <span>Total</span>
+                        <span>$550.00</span>
+                    </div>
+                    
+                    <button class="w-full bg-black text-white py-3.5 font-medium rounded hover:bg-gray-800 transition-colors">
+                        Proceder al pago
+                    </button>
+                    
+                    <div class="mt-6 text-center">
+                        <a href="#" class="text-sm text-black underline hover:text-gray-600 transition-colors">
+                            Seguir explorando
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-white px-10 py-12 flex justify-between items-center mt-auto">
+        <div class="text-2xl font-bold tracking-tight text-black">
+            creArte
+        </div>
+        
+        <div class="flex gap-8 text-sm text-gray-600 absolute left-1/2 transform -translate-x-1/2">
+            <a href="#" class="hover:text-black transition-colors">Acerca de creArte</a>
+            <a href="#" class="hover:text-black transition-colors">Contacto</a>
+        </div>
+        
+        <div class="flex gap-6 text-lg text-black">
+            <a href="#" class="hover:text-gray-600 transition-colors"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" class="hover:text-gray-600 transition-colors"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+    </footer>
+
+</body>
+</html>

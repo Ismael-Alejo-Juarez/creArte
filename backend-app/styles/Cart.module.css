@@ -37,3 +37,189 @@
     cursor: pointer;
     background-color: #111;
 }
+
+/* En caso de que si haya productos en el carrito */
+.fullContainer{
+    padding: 0 100px 20px 100px;
+}
+
+.cartContainer{
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+.dvSummary{
+    background-color: #FFF;
+    width: 300px;
+    max-height: 200px;
+    padding: 20px;
+    display: grid;
+    grid-template-rows: auto auto auto auto 1fr;
+    border-radius: 10px;
+    border: 1px solid #EEE;
+}
+
+.dvSummary h2, .textLeft, .textRight{
+    font-size: 18px;
+}
+
+.dvTotal{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 20px 0;
+}
+
+.textLeft{
+    text-align: left;
+}
+
+.textRight{
+    text-align: right;
+}
+
+.btnPay, .lkExplorer{
+    font-size: 14px;
+}
+
+.btnPay{
+    border: 1px solid #111;
+    border-radius: 5px;
+    background-color: #000;
+    color: #FFF;
+    padding: 15px 0;
+}
+
+.dvExplorer{
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.lkExplorer{
+    color: #000;
+    text-decoration: none;
+}
+
+.separator{
+    border: 1px solid #DDD;
+    width: 100%;
+}
+
+.dvProduct{
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-right: 50px;
+}
+
+.prdGeneral{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.prdGeneral img{
+    width: 110px;
+    height: 110px;
+    border-radius: 10px;
+}
+
+.generalInfo{
+    height: 110px;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    justify-content: left;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.generalInfo h2{
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+}
+
+.generalInfo p{
+    font-size: 14px;
+    display: -webkit-box;
+    line-clamp: 1;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 70%;
+    color: #1115;
+
+    margin: 0;
+    padding: 0;
+}
+
+.generalInfo button{
+    width: fit-content;
+    text-decoration: underline;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.prdInfo{
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.btnQuantity{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-radius: 3px;
+    border: 1px solid #DDD;
+}
+
+.btnQuantity button{
+    display: flex;
+    padding: 3px 3px;
+    font-size: 14px;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    background-color: transparent;
+}
+
+.btnMinus{
+    border: none;
+    border-radius: 3px 0 0 3px;
+    border-right: 1px solid #DDD;
+}
+
+.btnPlus{
+    border: none;
+    border-radius: 0 3px 3px 0;
+    border-left: 1px solid #DDD;
+}
+
+.btnQuantity span{
+    padding: 10px 15px;
+}
+
+.prdInfo span {
+    font-size: 18px;
+}
+
+.btnPay:hover{
+    cursor: pointer;
+    background-color: #122;
+}
+
+.btnQuantity button:hover{
+    cursor: pointer;
+    background-color: #ebebeb;
+}
+
+.lkExplorer:hover, .generalInfo button:hover{
+    cursor: pointer;
+    color: #333;
+}
