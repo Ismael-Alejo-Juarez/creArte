@@ -1,0 +1,102 @@
+.textFields{
+    display: flex;
+    flex-direction: column;
+}
+
+.smallInputs{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.textArea{
+    resize: none;
+}
+
+.limitText{
+   color: #C5C5C5; 
+   font-size: 14px;
+}
+
+.red{
+    color: #f007;
+}
+
+.noArrows::-webkit-inner-spin-button,
+.noArrows::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+}
+
+.noArrows{
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+.buttons{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.buttonBack{
+    text-decoration: none;
+    text-align: center;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 18px;
+    background-color:  #F6F6F6;
+    color: #000;
+    border: 1px solid #C6C6C6;
+    border-radius: 5px;
+}
+
+.button{
+    margin: 10px 0;
+    padding: 5px;
+    font-size: 14px;
+    background-color:  #F6F6F6;
+    color: #000;
+    border: 1px solid #C6C6C6;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.btnIcon{
+    font-size: 20px;
+}
+
+.select{
+    background-color: transparent;
+}
+
+.buttonBack:hover, .button:hover{
+    cursor: pointer;
+    background-color: #D6D6D6;
+}
+
+/* Modal para subir imágenes */
+.modalImages{
+    z-index: 100;
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerModal{
+    z-index: 101;
+    border: 1px solid black;
+
+}
+
+
+.formBlur{
+    filter: blur(3);
+}
+/* Desactivar todo */

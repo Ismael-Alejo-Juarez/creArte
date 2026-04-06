@@ -19,7 +19,7 @@ export default function SignIn() {
                         </span>
                     </div>
                     <div className={styles.buttons}>
-                        <button className={`${ralewayS.className}`} type="button">Iniciar sesión</button>
+                        <button className={`${ralewayS.className} ${styles.button}`} type="button">Iniciar sesión</button>
                         <span className={`${raleway.className}`}>¿No tienes cuenta? <Link href={"/sign-up"}
                             className={`${styles.link} ${raleway.className}`}>Crear cuenta</Link></span>
                     </div>

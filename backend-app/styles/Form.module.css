@@ -30,6 +30,7 @@
     padding: 10px 3px;
     font-size: 14px;
     transition: 0.3s ease;
+    background-color: transparent;
 }
 
 .link{
@@ -43,7 +44,7 @@
     grid-template-rows: 1fr 1fr;
 }
 
-.buttons button{
+.buttons button, .button{
     margin: 10px 0;
     padding: 10px;
     font-size: 18px;
@@ -71,7 +72,7 @@
     color: #333;
 }
 
-button:hover{
+.button:hover{
     cursor: pointer;
     background-color: #122;
 }

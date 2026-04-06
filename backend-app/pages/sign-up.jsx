@@ -19,7 +19,7 @@ export default function SignUp() {
                         <input className={`${styles.input} ${raleway.className}`} type="password" name="" id="" placeholder="Confirmar contraseña"/>
                     </div>
                     <div className={styles.buttons}>
-                        <button className={`${ralewayS.className}`} type="button">Registrarse</button>
+                        <button className={`${ralewayS.className} ${styles.button}`} type="button">Registrarse</button>
                         <span className={`${raleway.className}`}>¿Ya tienes cuenta? <Link href={"/sign-in"}
                             className={`${styles.link} ${raleway.className}`}>Inicia sesión</Link></span>
                     </div>
