@@ -26,7 +26,7 @@ export default function Header() {
                     href="/contact"
                     className={`
                         ${styles.links}
-                        ${router.pathname === '/contacto' ? styles.active : ''}
+                        ${router.pathname === '/contact' ? styles.active : ''}
                         `}
                 >Contacto</Link>
                 <Link
@@ -34,7 +34,7 @@ export default function Header() {
                     href="/about"
                     className={`
                         ${styles.links}
-                        ${router.pathname === '/acercade' ? styles.active : ''}
+                        ${router.pathname === '/about' ? styles.active : ''}
                         `}
                 >Acerca de creArte</Link>
             </div>

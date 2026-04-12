@@ -1,60 +1,62 @@
-.textFields{
+.textFields {
     display: flex;
     flex-direction: column;
 }
 
-.smallInputs{
+.smallInputs {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
 }
 
-.textArea{
+.textArea {
     resize: none;
 }
 
-.limitText{
-   color: #C5C5C5; 
-   font-size: 14px;
+.limitText {
+    color: #C5C5C5;
+    font-size: 14px;
 }
 
-.red{
+.red {
     color: #f007;
 }
 
 .noArrows::-webkit-inner-spin-button,
-.noArrows::-webkit-outer-spin-button{
+.noArrows::-webkit-outer-spin-button {
     -webkit-appearance: none;
 }
 
-.noArrows{
+.noArrows {
     appearance: textfield;
     -moz-appearance: textfield;
 }
 
-.buttons{
+.buttons {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 
-.buttonBack{
+.buttonBack {
     text-decoration: none;
     text-align: center;
     margin: 10px 0;
     padding: 10px;
     font-size: 18px;
-    background-color:  #F6F6F6;
+    background-color: #F6F6F6;
     color: #000;
     border: 1px solid #C6C6C6;
     border-radius: 5px;
 }
 
-.button{
+.button,
+.uploadImage,
+.btnDelete {
     margin: 10px 0;
     padding: 5px;
     font-size: 14px;
-    background-color:  #F6F6F6;
+    background-color: #F6F6F6;
     color: #000;
     border: 1px solid #C6C6C6;
     border-radius: 5px;
@@ -64,23 +66,25 @@
     gap: 5px;
 }
 
-.btnIcon{
+.btnIcon {
     font-size: 20px;
 }
 
-.select{
+.select {
     background-color: transparent;
 }
 
-.buttonBack:hover, .button:hover{
+.buttonBack:hover,
+.button:hover,
+.uploadImage:hover,
+.btnDelete:hover {
     cursor: pointer;
     background-color: #D6D6D6;
 }
 
 /* Modal para subir imágenes */
-.modalImages{
-    z-index: 100;
-    border: 1px solid black;
+.modalImages {
+    z-index: 90;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -89,24 +93,67 @@
     align-items: center;
 }
 
-.containerModal{
-    z-index: 101;
+.containerModal {
+    z-index: 100;
     border: 1px solid black;
-
+    width: 50%;
+    height: 50%;
+    border-radius: 5px;
+    background-color: #F5F5F5;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
 }
 
-.uploadImage::file-selector-button{
-    padding: 5px 10px;
-    font-size: 14px;
+.containerModal h2 {
+    color: #FFF;
+    background-color: #000;
+    padding: 10px 0;
+    margin: 0;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.listImages {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
 }
 
 .imgAdded {
-    border: 1px solid black;
     width: fit-content;
+    border: 1px solid black;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    justify-items: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
 }
 
+.nameImage {
+    font-size: 14px;
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
-.formBlur{
+.optionsImage {
+    display: flex;
+    gap: 10px;
+}
+
+.formBlur {
+    backdrop-filter: blur(3);
     filter: blur(3);
 }
+
 /* Desactivar todo */
+.invisibleInput, .modalDisabled {
+    display: none;
+}

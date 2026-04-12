@@ -25,7 +25,7 @@ export default function Home({ categories, products }) {
           Todo
         </button>
         {categories.map((category) => (
-          <>
+          <div key={category.idCategory} className={styles.divBtn}>
             <span className={styles.separator}>|</span>
             <button type='button'
               className={`
@@ -34,7 +34,7 @@ export default function Home({ categories, products }) {
               onClick={() => setCategorie(`${category.nameCategory}`)}>
               {capitalize(category.nameCategory)}
             </button>
-          </>
+          </div>
         ))}
       </div>
       {/* Aquí se van a listar todos los productos dependiendo
@@ -71,16 +71,7 @@ export async function getServerSideProps() {
   // Traer productos
   const { data: products, error: eproducts } = await supabase
     .from('Product')
-    .select('idProduct')
-    .range(0, 11);
-  // En este arreglo se van a guardar los productos con sus imagenes
-  const productList = [];
-  for (let j = 0; j < products.length; j++) {
-    const id = products[j].idProduct;
-    // Por cada elemento, traeme todo, tanto producto como imagen
-    const { data: prdImg, error: erPrdImg } = await supabase
-      .from('Product')
-      .select(`
+    .select(`
       idProduct,
       name,
       price,
@@ -89,12 +80,7 @@ export async function getServerSideProps() {
         order
       )
       `)
-      .eq('idProduct', id)
-      .single();
-    if(erPrdImg) return { props: { categories: [], products: [] } };
-    // Mandamos al arreglo
-    productList.push(prdImg);
-  }
+    .range(0, 11);
   if (error || eproducts) return { props: { categories: [], products: [] } };
-  return { props: { categories: data, products: productList } };
+  return { props: { categories: data, products: products } };
 }

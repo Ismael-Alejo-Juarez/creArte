@@ -22,6 +22,7 @@ export default function ViewProduct({ product }) {
                         <div className={styles.listImages}>
                             {product.ImageProduct.map((image) => (
                                 <img
+                                    key={image.order}
                                     onClick={() => setMainImage(image.url)}
                                     src={image.url}
                                     alt={product.name}

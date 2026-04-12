@@ -1,5 +1,5 @@
 /* En este div = products están listados los productos obtenidos*/
-.listProducts{
+.listProducts {
     width: 1fr;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -36,4 +36,8 @@
 .btnCategoria:hover {
     cursor: pointer;
     color: #000A;
+}
+
+.divBtn {
+    display: flex;
 }
