@@ -95,6 +95,16 @@
 
 }
 
+.uploadImage::file-selector-button{
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.imgAdded {
+    border: 1px solid black;
+    width: fit-content;
+}
+
 
 .formBlur{
     filter: blur(3);

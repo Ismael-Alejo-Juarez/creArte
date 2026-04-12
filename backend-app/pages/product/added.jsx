@@ -9,6 +9,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { capitalize } from "@/fonts/Capitalize";
 import { MdDriveFolderUpload } from "react-icons/md";
+import { RiDeleteBin6Line } from "react-icons/ri";
 
 export default function AddProduct({ categories }) {
     const [description, setDescription] = useState('');
@@ -114,12 +115,13 @@ export default function AddProduct({ categories }) {
                             type="button">Agregar producto</button>
                     </div>
                 </div>
-                <div className={styles.modalImages}>
+                <div className={styles.modalImages} onClick={() => setModal(false)}>
                     <div className={styles.containerModal}>
                         <h2 className={ralewayS.className}>Añadir imágenes</h2>
                         {/* Muestra si sigue dentro del rango de max. images */}
                         {images.length < maxImages && (
                             <input
+                                className={styles.uploadImage}
                                 type="file"
                                 accept="image/*"
                                 multiple
@@ -127,14 +129,17 @@ export default function AddProduct({ categories }) {
                         )}
                         {images.map((image, index) => (
                             // Estamos agregando archivos, * estudiar código *
-                            <div key={index}>
+                            <div key={index} className={styles.imgAdded}>
                                 <img
                                     src={URL.createObjectURL(image)}  // Creación de una url temporal
                                     alt={image.name}
                                     width={100}
+                                    className={styles.imgPreview}
                                 />
-                                <p>{image.name}</p>
-                                <button onClick={() => handleRemoveImage(index)}>Eliminar</button>
+                                <p className={`${styles.nameImage} ${raleway.className}`}>{image.name}</p>
+                                <button onClick={() => handleRemoveImage(index)} className={styles.btnDelete}>
+                                    <RiDeleteBin6Line />
+                                </button>
                             </div>
                         ))}
                     </div>
