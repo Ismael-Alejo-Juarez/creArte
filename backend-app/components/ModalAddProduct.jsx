@@ -1,7 +1,14 @@
-export default function ModalAddProduct() {
+import styles from "@/styles/ModalAdd.module.css";
+import { raleway, ralewayS } from '@/fonts/Raleway';
+import { useState, useRef } from "react";
+import { RiDeleteBin6Line } from 'react-icons/ri';
+
+export default function ModalAddProduct({ onCloseModal, setFinalImages }) {
     const [images, setImages] = useState([]);
+    const [messageError, setMessageError] = useState("");
     const addImageRef = useRef(null);
     const maxImages = 4;
+    
     const handleAddImage = (e) => {
         // Archivos que vienen de agregar
         const newFiles = Array.from(e.target.files);
@@ -19,41 +26,108 @@ export default function ModalAddProduct() {
         // : Dame todos aquellos que no tengan el index que te indico
         setImages(prev => prev.filter((_, i) => i !== index));
     }
+
+    const handleSaveImages = () => {
+        // Validar que hay imágenes
+        if(images.length > 0){
+            setMessageError("");
+            setFinalImages(images);
+            const close = () => {onCloseModal};
+        }else{
+            setMessageError("¡Agrega por lo menos una imagen a tu producto!");
+        }
+    }
+
     return (
-        <div className={`${styles.modalImages} ${addImages ? '' : styles.modalDisabled}`}>
-            <div className={styles.containerModal}>
-                <h2 className={ralewayS.className}>Añadir imágenes</h2>
-                {/* Muestra si sigue dentro del rango de max. images */}
-                {/* Este input está oculto, se refiere desde un botón */}
+        <div className={styles.addImagesContainer}>
+            <div className={styles.titleContainer}>
+                <h2 
+                className={`
+                ${styles.title}
+                ${ralewayS.className}`}>Añadir imágenes</h2>
+            </div>
+            <div className={styles.btnAddContainer}>
                 <input
                     ref={addImageRef}
-                    className={styles.invisibleInput}
+                    className={styles.toInvisible}
                     type="file"
                     accept="image/*"
                     multiple
                     onChange={handleAddImage} />
-                <button disabled={images.length < maxImages ? false : true} onClick={() => addImageRef.current.click()} className={`${styles.uploadImage} ${raleway.className}`}>
-                    Agregar imágenes
+                <button
+                    type="button"
+                    className={`
+                    ${styles.btnAdd} 
+                    ${styles.buttonStyle}
+                    ${images.length > 0 ? styles.toInvisible : ''}
+                    ${raleway.className}`}
+                    onClick={() => addImageRef.current.click()}>
+                    {"Subir imágenes (0/4)"}
                 </button>
-                <div className={styles.listImages}>
-                    {images.map((image, index) => (
-                        // Estamos agregando archivos, * estudiar código *
-                        <div key={index} className={styles.imgAdded}>
-                            <img
-                                src={URL.createObjectURL(image)}  // Creación de una url temporal
-                                alt={image.name}
-                                width={100}
-                                className={styles.imgPreview}
-                            />
-                            <div className={styles.optionsImage}>
-                                <p className={`${styles.nameImage} ${raleway.className}`}>{image.name}</p>
-                                <button onClick={() => handleRemoveImage(index)} className={styles.btnDelete}>
+                <p className={styles.messageError}>{messageError}</p>
+            </div>
+            <div className={styles.viewImageContainer}>
+                {/* Se agregan las imágenes correspondientes */}
+                {images.length > 0 && (
+                    images.map((image, index) => (
+                        <div className={styles.viewImage}>
+                            <div key={index} className={styles.divimage}>
+                                <img className={styles.image}
+                                    src={URL.createObjectURL(image)}  // Creación de una url temporal
+                                    alt={image.name} />
+                            </div>
+                            <div className={styles.btnImagesContainer}>
+                                <button
+                                    type="button"
+                                    className={`
+                                    ${styles.btnViewImage} 
+                                    ${styles.buttonStyle}
+                                    ${raleway.className}`}>
+                                    Ver imagen
+                                </button>
+                                <button 
+                                type="button"
+                                className={`
+                                    ${styles.btnDeleteImage} 
+                                    ${styles.buttonStyle}`}
+                                onClick={() => handleRemoveImage(index)}>
+                                    {/*Icono de basura*/}
                                     <RiDeleteBin6Line />
                                 </button>
                             </div>
                         </div>
-                    ))}
+                    ))
+                )}
+                {/* Cuando haya espacio, se agregan opciones así */}
+                <div className={`
+                    ${styles.imageVoid}
+                    ${images.length > 0 && images.length < maxImages ? '' : styles.toInvisible}`}>
+                    <button
+                        type="button"
+                        className={`
+                            ${styles.btnAdd} 
+                            ${styles.buttonStyle}
+                            ${raleway.className}`}
+                        onClick={() => addImageRef.current.click()}>
+                        {`Subir imagen (${images.length}/4)`}
+                    </button>
                 </div>
+            </div>
+            <div className={styles.actionsContainer}>
+                <button 
+                type="button" 
+                className={`
+                ${styles.cancelAddImages} 
+                ${styles.buttonStyle}
+                ${raleway.className}`}
+                onClick={onCloseModal}>Cancelar</button>
+                <button 
+                type="button" 
+                className={`
+                ${styles.acceptAddImages} 
+                ${styles.buttonStyle}
+                ${raleway.className}`}
+                onClick={() => handleSaveImages()}>Aceptar</button>
             </div>
         </div>
     );

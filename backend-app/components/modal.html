@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Modal de añadir producto</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .addImagesContainer{
+            border: 1px solid #555;
+            min-width: 300px;
+            max-width: fit-content;
+            min-height: 300px;
+            padding: 0;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            border-radius: 3px;
+        }
+        .titleContainer{
+            color: #FFF;
+            background-color: #000;
+            /* Los tipo de letra, tamaño y todo eso lo asigno en real*/
+        }
+        .title{
+            font-size: 18px;
+            margin: 15px 10px;
+        }
+        .btnAddContainer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+        }
+
+        .buttonStyle{
+            font-size: 14px;
+            padding: 10px;
+            border: 1px solid #000;
+            border-radius: 3px;
+        }
+
+        .viewImageContainer{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+        }
+
+        .viewImage{
+            display: grid;
+            grid-template-rows: 1fr auto;
+            justify-items: center;
+            align-items: center;
+
+            border: 1px solid #555;
+            border-radius: 3px;
+            padding: 10px;
+            background-color: #E9E9E9;
+        }
+
+        .imageVoid{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border: none;
+            background-color: transparent;
+        }
+
+        .image{
+            width: 200px;
+        }
+        .btnImagesContainer{
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 0 10px;
+        }
+
+        .actionsContainer{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="addImagesContainer">
+        <div class="titleContainer">
+            <h2 class="title">Añadir imágenes</h2>
+        </div>
+        
+        <div class="btnAddContainer">
+            <button type="button" class="btnAdd buttonStyle">
+                Subir imágenes (0/4)
+            </button> 
+        </div>
+        <div class="viewImageContainer">
+            <div class="viewImage">
+                <div class="divimage">
+                    <img class="image" src="../public/profile-image/perfil.jpg" alt="">
+                </div>
+                <div class="btnImagesContainer">
+                    <button type="button" class="btnViewImage buttonStyle">
+                        Ver imagen
+                    </button>
+                    <button type="button" class="btnDeleteImage buttonStyle">
+                        <!-- Icono de basura -->
+                        (B)
+                    </button>
+                </div>
+            </div>
+            <!-- Para cuando no se haya llegado al maximo -->
+            <div class="viewImage">
+                <div class="divimage">
+                    <img class="image" src="../public/profile-image/perfil.jpg" alt="">
+                </div>
+                <div class="btnImagesContainer">
+                    <button type="button" class="btnViewImage buttonStyle">
+                        Ver imagen
+                    </button>
+                    <button type="button" class="btnDeleteImage buttonStyle">
+                        <!-- Icono de basura -->
+                        (B)
+                    </button>
+                </div>
+            </div>
+                        <div class="viewImage">
+                <div class="divimage">
+                    <img class="image" src="../public/profile-image/perfil.jpg" alt="">
+                </div>
+                <div class="btnImagesContainer">
+                    <button type="button" class="btnViewImage buttonStyle">
+                        Ver imagen
+                    </button>
+                    <button type="button" class="btnDeleteImage buttonStyle">
+                        <!-- Icono de basura -->
+                        (B)
+                    </button>
+                </div>
+            </div>
+            <!-- Cuando haya espacio, se agregan opciones así-->
+            <div class="imageVoid">
+                <button type="button" class="btnAdd buttonStyle">
+                    Subir imagen (2/4)
+                </button>
+            </div>
+        </div>
+        <div class="actionsContainer">
+            <button type="button" class="cancelAddImages buttonStyle">Cancelar</button>
+            <button type="button" class="acceptAddImages buttonStyle">Aceptar</button>
+        </div>
+    </div>
+</body>
+</html>

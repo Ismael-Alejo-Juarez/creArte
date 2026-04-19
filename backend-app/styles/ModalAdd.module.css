@@ -1,0 +1,130 @@
+.addImagesContainer {
+    border: 1px solid #555;
+    padding: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    border-radius: 3px;
+
+    min-width: 1045px;
+    max-width: 1045px;
+    min-height: 445px;
+    max-height: 445px;
+
+    background-color: #FFF;
+}
+
+.titleContainer {
+    color: #FFF;
+    background-color: #000;
+    /* Los tipo de letra, tamaño y todo eso lo asigno en real*/
+    text-align: center;
+}
+
+.title {
+    font-size: 18px;
+    margin: 15px 10px;
+}
+
+.btnAddContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.buttonStyle {
+    font-size: 14px;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 3px;
+}
+
+.viewImageContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.viewImage {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    justify-items: center;
+    align-items: center;
+
+    border: 1px solid #555;
+    border-radius: 3px;
+    padding: 10px;
+    background-color: #E9E9E9;
+
+    min-width: 220px;
+    max-width: 220px;
+    min-height: 270px;
+    max-height: 270px;
+}
+
+.imageVoid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+    background-color: transparent;
+}
+
+.image {
+    width: 200px;
+}
+
+.btnImagesContainer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0 10px;
+}
+
+.actionsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.acceptAddImages, .btnDeleteImage{
+    font-size: 14px;
+    background-color: #000;
+    color: #FFF;
+    border: #000;
+    border-radius: 5px;
+}
+
+.acceptAddImages:hover, .btnDeleteImage:hover{
+    cursor: pointer;
+    background-color: #122;
+}
+
+.btnViewImage, .btnAdd, .cancelAddImages {
+    font-size: 14px;
+    background-color: #F6F6F6;
+    color: #000;
+    border: 1px solid #C6C6C6;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.btnViewImage:hover, .btnAdd:hover, .cancelAddImages:hover {
+    cursor: pointer;
+    background-color: #D6D6D6;
+}
+
+.toInvisible{
+    display: none;
+}
