@@ -120,6 +120,10 @@
     gap: 5px;
 }
 
+.messageError{
+    color: #A00;
+}
+
 .btnViewImage:hover, .btnAdd:hover, .cancelAddImages:hover {
     cursor: pointer;
     background-color: #D6D6D6;

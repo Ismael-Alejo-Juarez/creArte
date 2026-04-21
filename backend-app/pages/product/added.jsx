@@ -17,6 +17,7 @@ export default function AddProduct({ categories }) {
     const [addImages, setAddImages] = useState(false);
     const [actualImages, setActualImages] = useState([]);
     const maxLength = 500;
+
     const onCloseModal = () => {
         setAddImages(false);
     }
@@ -24,14 +25,14 @@ export default function AddProduct({ categories }) {
         console.log(actualImages);
     }, [actualImages])
     return (
-        <div>
+        <div onKeyDown={(e) => e.key === 'Escape' && addImages == true ? setAddImages(false) : ''}>
             <div className={addImages == true ? styles.activeModal : styles.invisibleInput}>
-                <ModalAddProduct 
-                onCloseModal={onCloseModal}
-                setFinalImages={setActualImages}/>
+                <ModalAddProduct
+                    onCloseModal={onCloseModal}
+                    setFinalImages={setActualImages} />
             </div>
-            <div 
-            className={`
+            <div
+                className={`
                 ${styles.mainContent}
                 ${addImages == true ? styles.formBlur : ''}`}>
                 <Header />

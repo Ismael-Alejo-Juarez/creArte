@@ -1,11 +1,11 @@
 import styles from "@/styles/ModalAdd.module.css";
 import { raleway, ralewayS } from '@/fonts/Raleway';
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { RiDeleteBin6Line } from 'react-icons/ri';
 
 export default function ModalAddProduct({ onCloseModal, setFinalImages }) {
     const [images, setImages] = useState([]);
-    const [messageError, setMessageError] = useState("");
+    const [messageError, setMessageError] = useState(false);
     const addImageRef = useRef(null);
     const maxImages = 4;
     
@@ -30,13 +30,20 @@ export default function ModalAddProduct({ onCloseModal, setFinalImages }) {
     const handleSaveImages = () => {
         // Validar que hay imágenes
         if(images.length > 0){
-            setMessageError("");
+            setMessageError(false);
             setFinalImages(images);
-            const close = () => {onCloseModal};
+            onCloseModal(); // Llama al método de added.jsx
         }else{
-            setMessageError("¡Agrega por lo menos una imagen a tu producto!");
+            setMessageError(true);
         }
     }
+
+    useEffect(() => {
+        // Cada vez que se recargue va a estar viendo esto...
+        if(images.length > 0){
+            setMessageError(false);
+        }
+    }, [images]);
 
     return (
         <div className={styles.addImagesContainer}>
@@ -64,7 +71,12 @@ export default function ModalAddProduct({ onCloseModal, setFinalImages }) {
                     onClick={() => addImageRef.current.click()}>
                     {"Subir imágenes (0/4)"}
                 </button>
-                <p className={styles.messageError}>{messageError}</p>
+                <p 
+                className={`
+                    ${styles.messageError} 
+                    ${raleway.className}
+                    ${!messageError ? styles.toInvisible : ''}`}>
+                        ¡Agrega por lo menos una imagen a tu producto!</p>
             </div>
             <div className={styles.viewImageContainer}>
                 {/* Se agregan las imágenes correspondientes */}
@@ -120,14 +132,14 @@ export default function ModalAddProduct({ onCloseModal, setFinalImages }) {
                 ${styles.cancelAddImages} 
                 ${styles.buttonStyle}
                 ${raleway.className}`}
-                onClick={onCloseModal}>Cancelar</button>
+                onClick={() => {setMessageError(false); onCloseModal()}}>Cancelar</button>
                 <button 
                 type="button" 
                 className={`
                 ${styles.acceptAddImages} 
                 ${styles.buttonStyle}
                 ${raleway.className}`}
-                onClick={() => handleSaveImages()}>Aceptar</button>
+                onClick={() => {handleSaveImages()}}>Aceptar</button>
             </div>
         </div>
     );
